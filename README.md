@@ -26,3 +26,41 @@ The CSV file will have the following columns:
 - firstname
 - email
 - age
+
+---
+
+# Zorin OS Last 3 User Sessions Script
+
+This shell script, `get_last_sessions.sh`, displays the start time, end time, and duration of the last three completed login sessions for the user 'gecko' on a Zorin OS (or other Ubuntu-based Linux) system.
+
+## Requirements
+
+- A Linux system with standard shell commands (bash, last, grep, awk, date, sort, head).
+- The script is configured for the username 'gecko'. To use for a different user, the `USERNAME` variable within the script must be modified.
+
+## How to Run
+
+1.  Ensure the script `get_last_sessions.sh` has execute permissions. If not, run:
+    ```bash
+    chmod +x get_last_sessions.sh
+    ```
+2.  Execute the script from your terminal:
+    ```bash
+    ./get_last_sessions.sh
+    ```
+
+## Output
+
+The script will print the details for up to the last three completed sessions for the user 'gecko'. Each line will be in the format:
+
+`Session Start: [Start Time], End: [End Time], Duration: [HH:MM:SS]`
+
+If fewer than three sessions are found, it will display information for those available. If no completed sessions are found, it will print a message indicating so.
+
+**Example Output:**
+```
+Session Start: Mon Dec 11 10:00:00 2023, End: Mon Dec 11 12:30:00 2023, Duration: 02:30:00
+Session Start: Sun Dec 10 15:00:00 2023, End: Sun Dec 10 18:00:00 2023, Duration: 03:00:00
+Session Start: Fri Dec  8 11:00:00 2023, End: Fri Dec  8 17:00:00 2023, Duration: 06:00:00
+```
+*(Note: Actual date/time values will vary based on system logs.)*
